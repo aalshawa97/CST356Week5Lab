@@ -1,0 +1,10 @@
+Exercise 1
+4.
+The key attribute denotes one or more properties that uniquely identify an entity.
+14.
+The database has been rebuilt because we have changes its' contents by adding a new property to it.
+
+Exercise 2
+1.
+We would use view models as they contain the data to be displayed, regardless of the data model is static or editable values in a database.
+The Entity Data Model is a static set of concepts that describe the structure of data, regardless of its stored form.
