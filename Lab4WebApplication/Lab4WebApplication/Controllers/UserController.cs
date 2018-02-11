@@ -7,13 +7,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SimpleInjector;
 
 namespace Lab4WebApplication.Controllers
 {
     public class UserController : Controller
     {
-        static AppDbContext dbContext;
-        EntityRepository entityRepository = new EntityRepository(dbContext);
+        //Create a SimpleInjector container
+        static Container container = new Container();
+
+        //Configure the container
+        EntityRepository entityRepository = (EntityRepository)container.GetInstance(typeof(EntityRepository));
+
+        //static AppDbContext dbContext;
+        //EntityRepository entityRepository = new EntityRepository(dbContext);
 
         public ActionResult List()
         {
