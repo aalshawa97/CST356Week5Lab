@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Lab4WebApplication.Services;
 using SimpleInjector;
 
 namespace Lab4WebApplication.Controllers
@@ -15,16 +16,22 @@ namespace Lab4WebApplication.Controllers
     {
         //Create a SimpleInjector container
         static Container container = new Container();
+        private readonly IUserService userService;
 
         //Configure the container
         EntityRepository entityRepository = (EntityRepository)container.GetInstance(typeof(EntityRepository));
 
         //static AppDbContext dbContext;
-        //EntityRepository entityRepository = new EntityRepository(dbContext);
+       // EntityRepository entityRepository = new EntityRepository(dbContext);
+
+      public UserController(IUserService userService)
+      {
+        this.userService = userService;
+      }
 
         public ActionResult List()
         {
-            var users = GetAllUsers();
+            var users = userService.GetAllUsers();
 
             return View(users);
         }

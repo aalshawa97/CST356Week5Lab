@@ -16,12 +16,12 @@ namespace Lab4WebApplication.Controllers
 {
     public class PetController : Controller
     {
-        private readonly IPetService _petService;
+        private readonly IPetService petService;
         private readonly log4net.ILog _log = log4net.LogManager.GetLogger(typeof(PetController));
 
         public PetController(IPetService petService)
         {
-            _petService = petService;
+            petService = petService;
         }
 
         //Create a SimpleInjector container
@@ -116,10 +116,11 @@ namespace Lab4WebApplication.Controllers
         }
 
         private PetViewModel GetPet(int petId)
-        { 
-            var pet = entityRepository.GetPet(petId);
+        {
+          var pet = entityRepository.GetPet(petId);
+          //var pet = petService.GetPet(petId);
 
-            return MapToPetViewModel(pet);
+          return MapToPetViewModel(pet);
         }
 
         private ICollection<PetViewModel> GetPetsForUser(int userId)
