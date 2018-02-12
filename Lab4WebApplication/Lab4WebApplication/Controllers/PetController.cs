@@ -2,6 +2,8 @@
 using Lab4WebApplication.Data.Entities;
 using Lab4WebApplication.Models.View;
 using Lab4WebApplication.Repositories;
+using Lab4WebApplication.Services;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,22 @@ namespace Lab4WebApplication.Controllers
 {
     public class PetController : Controller
     {
-        static AppDbContext dbContext;
+        private readonly IPetService _petService;
+        private readonly ILog _log = log4net.LogManager.GetLogger(typeof(PetController));
 
-        EntityRepository entityRepository = new EntityRepository(dbContext);
+        public PetController(IPetService petService)
+        {
+            _petService = petService;
+        }
+
+        //Create a SimpleInjector container
+        static Container container = new Container();
+
+        //Configure the container
+        EntityRepository entityRepository = (EntityRepository)container.GetInstance(typeof(EntityRepository));
+
+        //static AppDbContext dbContext;
+        //EntityRepository entityRepository = new EntityRepository(dbContext);
 
         public ActionResult List(int userId)
         {

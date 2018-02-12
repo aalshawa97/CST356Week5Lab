@@ -1,0 +1,7 @@
+Exercises 4
+4.What is dependency injection and why is it beneficial?
+
+Dependency injection allows us to use abstract objects for parameters of functions rather than concrete types of objects. Dependecy injection allows us to reuse code.
+
+Exercise 5
+6.Unit tests test one piece of functionality at a time of the application. Testing multiple pieces of functionality at once may make the cause of a failure in functionality to be unclear.
