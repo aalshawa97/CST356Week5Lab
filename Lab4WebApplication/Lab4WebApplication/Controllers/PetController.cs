@@ -1,4 +1,5 @@
-﻿using Lab4WebApplication.Data;
+﻿using Common.Logging;
+using Lab4WebApplication.Data;
 using Lab4WebApplication.Data.Entities;
 using Lab4WebApplication.Models.View;
 using Lab4WebApplication.Repositories;
@@ -6,6 +7,7 @@ using Lab4WebApplication.Services;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
+using log4net;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,7 +17,7 @@ namespace Lab4WebApplication.Controllers
     public class PetController : Controller
     {
         private readonly IPetService _petService;
-        private readonly ILog _log = log4net.LogManager.GetLogger(typeof(PetController));
+        private readonly log4net.ILog _log = log4net.LogManager.GetLogger(typeof(PetController));
 
         public PetController(IPetService petService)
         {
