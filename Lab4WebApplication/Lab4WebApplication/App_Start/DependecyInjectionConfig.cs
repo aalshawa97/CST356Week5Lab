@@ -12,8 +12,6 @@ namespace Lab4WebApplication.App_Start
 {
     public class DependecyInjectionConfig
     {
-        public static class DependencyInjectionConfig
-        {
             public static void Register()
             {
                 // Create the container as usual.
@@ -32,5 +30,5 @@ namespace Lab4WebApplication.App_Start
                 DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
             }
         }
-    }
+    
 }
