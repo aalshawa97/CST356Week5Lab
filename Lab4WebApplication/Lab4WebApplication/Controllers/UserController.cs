@@ -115,6 +115,8 @@ namespace Lab4WebApplication.Controllers
         {
             var user = entityRepository.GetUser(userViewModel.Id);
 
+            CopyToUser(userViewModel, user);
+
             entityRepository.UpdateUser(user);
         }
 
