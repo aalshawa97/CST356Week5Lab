@@ -27,5 +27,6 @@ namespace Lab4WebApplication.Models.View
         public string VetName { get; set; }
 
         public int UserId { get; set; }
+        public bool CheckupAlert { get; set; }
     }
 }
