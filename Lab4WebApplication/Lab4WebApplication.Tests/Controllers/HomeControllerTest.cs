@@ -9,6 +9,7 @@ using Lab4WebApplication.Controllers;
 
 namespace Lab4WebApplication.Tests.Controllers
 {
+/*
     [TestClass]
     public class HomeControllerTest
     {
@@ -51,4 +52,5 @@ namespace Lab4WebApplication.Tests.Controllers
             Assert.IsNotNull(result);
         }
     }
+*/
 }

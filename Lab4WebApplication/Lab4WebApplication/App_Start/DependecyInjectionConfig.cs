@@ -21,6 +21,8 @@ namespace Lab4WebApplication.App_Start
                 // Register your types, for instance:
                 container.Register<IEntity, EntityRepository>(Lifestyle.Scoped);
                 container.Register<AppDbContext, AppDbContext>(Lifestyle.Scoped);
+                container.Register<IUserService, UserService>(Lifestyle.Scoped);
+                container.Register<IPetService, PetService>(Lifestyle.Scoped);
 
                 // This is an extension method from the integration package.
                 container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
