@@ -470,3 +470,4 @@ C:\Users\aalshawa\Documents\GitHub\CST356Week5Lab\Lab4WebApplication\Lab4WebAppl
 C:\Users\aalshawa\Documents\GitHub\CST356Week5Lab\Lab4WebApplication\Lab4WebApplication\obj\Debug\Lab4WebApplication.csproj.CoreCompileInputs.cache
 C:\Users\aalshawa\Documents\GitHub\CST356Week5Lab\Lab4WebApplication\Lab4WebApplication\obj\Debug\Lab4WebApplication.dll
 C:\Users\aalshawa\Documents\GitHub\CST356Week5Lab\Lab4WebApplication\Lab4WebApplication\obj\Debug\Lab4WebApplication.pdb
+C:\Users\aalshawa\Documents\GitHub\CST356Week5Lab\Lab4WebApplication\Lab4WebApplication\obj\Debug\Lab4WebApplication.csprojResolveAssemblyReference.cache

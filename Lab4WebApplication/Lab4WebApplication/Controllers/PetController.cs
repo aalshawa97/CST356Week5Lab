@@ -21,7 +21,7 @@ namespace Lab4WebApplication.Controllers
 
         public PetController(IPetService petService)
         {
-            petService = petService;
+            this.petService = petService;
         }
 
         //Create a SimpleInjector container
@@ -73,11 +73,12 @@ namespace Lab4WebApplication.Controllers
         [HttpPost]
         public ActionResult Edit(PetViewModel petViewModel)
         {
+            petViewModel.UserId = GetPet(petViewModel.Id).UserId;
             if (ModelState.IsValid)
             {
-                UpdatePet(petViewModel);
+                petService.UpdatePet(petViewModel);
 
-                return RedirectToAction("List",new { userid =  petViewModel.UserId});
+                return RedirectToAction("List", new { petViewModel.UserId });
             }
 
             return View();
@@ -95,6 +96,8 @@ namespace Lab4WebApplication.Controllers
 
             var pet = entityRepository.GetPet(petViewModel.Id);
 
+            CopyToPet(petViewModel,pet);
+        
             entityRepository.UpdatePet(pet);
         }
 
